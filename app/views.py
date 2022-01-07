@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 # Create your views here.
-def index(request):
+class index_page(TemplateView):
+    template_name = 'app/index.html'
+
+def title(request):
     return HttpResponse('<h1>Hello, World!</h1>')
 
 def user_page(request, user_name):
